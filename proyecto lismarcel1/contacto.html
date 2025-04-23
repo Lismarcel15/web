@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Lismarcel</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="IMG/lg1.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Lismarcel</h1>
+            <p>Tu Marca de Eventos</p>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Servicios</a>
+                    <div class="dropdown-content">
+                        <a href="catalogo.html">Catálogo</a>
+                        <a href="promociones.html">Promociones</a>
+                    </div>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Contáctanos</h2>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <fieldset>
+                        <legend>Información de Contacto</legend>
+                        <div class="info-item">
+                            <h3>Dirección</h3>
+                            <p>Av. Principal 123, Ciudad</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Teléfono</h3>
+                            <p> +593 999 173 620</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Email</h3>
+                            <p>info@lismarcel.com</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            <p>Sábados: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/infolismarcel@gmail.com" method="POST" >
+                    <fieldset>
+                        <legend>Formulario de Contacto</legend>
+                        <form action="conecta.php"  method="post">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre completo:</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono:</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="servicio">Seleccione servicio:</label>
+                                    <select id="servicio" name="servicio" >
+                                        <option value="">Selecciona una opción</option>
+                                        <optgroup label="Catálogo">
+                                            <option value="cat_boda_clasica">Boda Clásica</option>
+                                            <option value="cat_boda_playa">Boda en Playa</option>
+                                            <option value="cat_boda_jardin">Boda de Jardín</option>
+                                            <option value="cat_conferencia">Conferencias</option>
+                                            <option value="cat_lanzamiento">Lanzamientos de Producto</option>
+                                            <option value="cat_teambuilding">Team Building</option>
+                                            <option value="cat_rueda_de_prensa">Rueda de Prensa</option>
+                                            <option value="cat_cumpleanos">Cumpleaños</option>
+                                            <option value="cat_aniversario">Aniversarios</option>
+                                            <option value="cat_graduacion">Graduaciones</option>
+                                            <option value="cat_bautizo">Bautizo</option>
+                                        </optgroup>
+                                        <optgroup label="Menú">
+                                            <option value="cat_entrada">Entrada</option>
+                                            <option value="cat_plato_fuerte">Plato fuerte</option>
+                                            <option value="cat_postre">Postre</option>
+                                            <option value="cat_bocaditos_de_sal">Bocaditos de sal</option>
+                                            <option value="cat_bocaditos_de_dulce">Bocaditos de dulce</option>
+                                            <option value="cat_bebidas">Bebidas</option>
+                                            <option value="cat_cocteles">Cócteles de Celebración</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" id="evento" name="evento">
+                                    <input type="hidden" id="precio" name="precio">
+                                    
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div id="resumen-promocion" style="display:none; margin-bottom: 1em;">
+                                        <strong>Reservando:</strong> <span id="eventoResumen"></span><br><br><hr><br>
+                                        <strong>Precio Promoción:</strong> <span id="precioResumen"></span><br><br><hr><br>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="fecha">Fecha estimada del evento:</label>
+                                    <input type="date" id="fecha" name="fecha" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="invitados">Número de invitados:</label>
+                                    <input type="number" id="invitados" name="invitados" min="1" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje o requerimientos especiales:</label>
+                                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                                </div>
+                                
+                                <div class="form-button">
+                                    <button type="submit" class="btn">Enviar Solicitud</button>
+                                </div>
+                            </form>
+                        </fieldset>
+                        
+                    </fieldset>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Lismarcel</h3>
+                <p>Haciendo tus sueños realidad desde 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div class="social-links">
+                    <p>Email:</p>           
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXGkPXcBprxMqzSlrCZqqNhPXhSRTQpQrBXDdgFXchJSQpVGnCxnFvwvnSKrDchjXmplg" class="flotantes" target="_blank">
+                        <img src="https://clipground.com/images/email-logo-png-19.png" alt="IMG/gm.jpeg">
+                    </a>
+                    <p>Teléfono:</p>     
+                    <a href="https://wa.me/+593992800880" class="flotantes" target="_blank">
+                        <img src="https://thumbnail.imgbin.com/4/9/5/imgbin-whatsapp-inc-computer-icons-computer-software-whatsapp-Fa51YynHurEbvDPSHayFk6f1Y_t.jpg" alt="IMG/WP.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <p>Facebook</p>
+                    <a href="https://www.facebook.com/MGABYORTIZ" class="flotantes" target="_blank">
+                        <img src="https://th.bing.com/th/id/OIP.9Nhuq12vT67GvcD5BmmHlgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="IMG/cc.jpeg">
+                    </a>
+                    <p>Instagram</p>
+                    <a href="https://www.instagram.com/lismarcel_eventos/" class="flotantes" target="_blank">
+                        <img src="https://cdn.vectorstock.com/i/500p/19/31/instagram-app-icon-with-black-color-vector-48991931.jpg" alt="IMG/ta.jpeg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="https://wa.me/+593992800880" class="flotante" target="_blank">
+            <img src="https://th.bing.com/th/id/OIP.Bt9n63V0U-NlYIn7F1dePwHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="IMG/maso.jpeg">
+        </a>
+        <div class="copyright">
+            <p>&copy; 2025 Lismarcel - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const evento = params.get("evento");
+      const precio = params.get("precio");
+  
+      if (evento && precio) {
+        document.getElementById("evento").value = evento;
+        document.getElementById("precio").value = precio;
+  
+        document.getElementById("eventoResumen").textContent = evento;
+        document.getElementById("precioResumen").textContent = precio;
+        document.getElementById("resumen-promocion").style.display = "block";
+      }
+    };
+  </script>
